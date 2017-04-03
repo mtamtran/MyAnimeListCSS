@@ -1,0 +1,266 @@
+@import "https://dl.dropboxusercontent.com/u/77585370/MAL%20Stuff/4343434343.css";
+
+/* ---------- BACKGROUND & GLOBAL TEXT STYLING ---------- */
+
+body{
+	background: no-repeat 60% 18% fixed black;
+	background-size: cover;
+	color: #000;
+	font-family: 'Segoe UI', 'Century Gothic', sans-serif;
+	font-size: 11px;
+	-moz-background-size: cover;
+}
+
+/* ---------- BLOCK SURROUNDING LIST ---------- */
+
+#list_surround{
+	margin: -25px auto 0;
+	width: 950px;
+}
+
+/* ---------- TABLE LAYOUT ---------- */
+
+/* Table header & sort links */
+.table_header{
+	background-color: rgba(0,0,0,0.4);
+	border-bottom: 0px !important;
+	border-color: rgba(255,255,255,0.25);
+	border-style: solid;
+	border-width: 1px 1px 0px 0px;
+	color: #FFF;
+	padding: 2px;
+}
+
+.table_headerLink{
+	color: #FFF;
+	text-decoration: none;
+}
+
+.table_headerLink:visited{
+	color: #FFF;
+}
+
+.table_headerLink:hover{
+	text-shadow:  rgba(255,255,255,0.4) -1px -1px 3px, rgba(255,255,255,0.4) 1px 1px 3px;
+}
+
+/* Table content (anime titles) */
+.td1, .td2{
+	background-color: rgba(0,0,0,0.6);
+	border-color: rgba(255,255,255,0.25);
+	border-style: solid;
+	border-width: 1px 1px 0 0;
+	color: #FFF;
+	padding: 2px;
+}
+
+/* Links in titles */
+.td1 a, .td2 a{
+	color: #ffc700;
+	text-decoration: none;
+}
+
+/* Glow effect on link hover */
+.td1 a:hover, .td2 a:hover{
+	text-shadow:  #9d9d31 -1px -1px 3px, #9d9d31 1px 1px 3px;
+}
+
+/* Highlighting hovered row */
+td{
+	-o-transition: background-color .2s linear;
+	-moz-transition: background-color .2s linear;
+	-webkit-transition: background-color .2s linear;
+	transition: background-color .2s linear;
+}
+
+tr:hover > .td1, tr:hover > .td2{
+	background-color: rgba(45,45,45,0.9) !important;
+}
+
+/* Brackets for small text like 'rewatching' or 'airing' */
+.td1 > small:before, .td2 > small:before{
+	content:'(';
+}
+
+.td1 > small:after, .td2 > small:after{
+	content:')';
+}
+
+/* This makes all text in tables bold except for Edit - More */
+#list_surround td[class^='td']:first-child, #list_surround td[class^='td']:nth-child(n+3), .animetitle{font-weight:bold}
+
+.borderRBL{
+	border-width: 1px 1px 0 36px !important;
+}
+
+/* Header image for Currently Watching, Completed, Dropped, etc... */
+.header_title{
+	color: transparent;
+	content: none;
+	height: 60px;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	width: 520px;
+}
+
+.header_cw div{
+	background-position: 0px 0px;
+}
+
+.header_completed div{
+	background-position: 0px -60px;
+}
+
+.header_onhold div{
+	background-position: 0px -120px;
+}
+
+.header_dropped div{
+	background-position: 0px -240px;
+}
+
+.header_ptw div{
+	background-position: 0px -180px;
+}
+
+/* Block displaying category totals */
+.category_totals{
+	background-color: rgba(0,0,0,0.5);
+	border: solid 1px rgba(255,255,255,0.25);
+	color: #fff;
+	font-weight: bold;
+	padding-left: 37px !important;
+	padding: 2px;
+	text-shadow: orange 1px 1px 2px,cyan -1px -1px 2px;
+}
+
+/* Text displaying global totals */
+#grand_totals{
+	color: #fff;
+	display: block;
+	font-size: larger;
+	font-weight: bold;
+	padding: 5px;
+	text-align: center;
+	text-shadow: #c51 -1px -1px 3px, #c51 1px 1px 3px, #c51 1px -1px 4px, #c51 -1px 1px 3px;
+	text-transform: uppercase;
+}
+
+/* Modifying copyright section */
+#copyright{
+	background-color: rgba(0,0,0,0.6);
+	border: 1px solid rgba(255,255,255,0.25);
+	color: white;
+	margin-bottom: 40px;
+	padding: 2px;
+}
+
+#copyright a{color: #FFF}
+
+#copyright br{display:none}
+
+/* ---------- BAR AT BOTTOM ---------- */
+
+/* Setting a position */
+#list_surround > table:first-of-type {
+	bottom: 0;
+	margin-left: -25px;
+	position: fixed;
+	width: 1000px;
+        z-index: 1 !important;
+}
+
+/* Setting elements to display pure image */
+#list_surround > table:first-of-type td{
+	background-color: transparent;
+	border-width: 0 !important;
+}
+
+.status_not_selected, .status_selected{
+	border-width: 0 !important;
+	padding: 0 !important;
+	width: auto !important;
+}
+
+.status_not_selected > a, .status_selected > a{
+	color: transparent !important;
+	content: none;
+	display: block;
+	height: 30px;
+	width: 150px;
+}
+
+/* Override size for wider parts */
+.status_not_selected > a[href*="status=1"],.status_selected > a[href*="status=1"],.status_not_selected > a[href*="status=7"], .status_selected > a[href*="status=7"]{
+	width: 200px;
+}
+
+/* Currently watching */
+.status_not_selected > a[href*="status=1"]{background-position: 0px 0px}
+.status_not_selected > a[href*="status=1"]:hover{background-position: 0px 30px}
+.status_not_selected > a[href*="status=1"]:active, .status_selected > a[href*="status=1"]{background-position: 0px 60px}
+
+/* Completed */
+.status_not_selected > a[href*="status=2"]{background-position: -200px 0px}
+.status_not_selected > a[href*="status=2"]:hover{background-position: -200px 30px}
+.status_not_selected > a[href*="status=2"]:active, .status_selected > a[href*="status=2"]{background-position: -200px 60px}
+
+/* On Hold */
+.status_not_selected > a[href*="status=3"]{background-position: -350px 0px}
+.status_not_selected > a[href*="status=3"]:hover{background-position: -350px 30px}
+.status_not_selected > a[href*="status=3"]:active, .status_selected > a[href*="status=3"]{background-position: -350px 60px}
+
+/* Dropped */
+.status_not_selected > a[href*="status=4"]{background-position: -500px 0px}
+.status_not_selected > a[href*="status=4"]:hover{background-position: -500px 30px}
+.status_not_selected > a[href*="status=4"]:active, .status_selected > a[href*="status=4"]{background-position: -500px 60px}
+
+/* Plan to watch */
+.status_not_selected > a[href*="status=6"]{background-position: -650px 0px}
+.status_not_selected > a[href*="status=6"]:hover{background-position: -650px 30px}
+.status_not_selected > a[href*="status=6"]:active, .status_selected > a[href*="status=6"]{background-position: -650px 60px}
+
+/* All Anime */
+.status_not_selected > a[href*="status=7"]{background-position: -800px 0px}
+.status_not_selected > a[href*="status=7"]:hover{background-position: -800px 30px}
+.status_not_selected > a[href*="status=7"]:active, .status_selected > a[href*="status=7"]{background-position: -800px 60px}
+
+/* ---------- TOP-BAR RESTYLING ---------- */
+
+#mal_control_strip{
+	background-color: transparent !important;
+	position:fixed;
+	top: 0;
+}
+
+#mal_control_strip td{height: 24px !important; border-right-color: rgba(0,0,0,0.8) !important;}
+#mal_control_strip div{display:inline}
+
+#mal_cs_pic img{height: 24px !important; width: auto !important}
+
+#mal_cs_listinfo{width: auto !important}
+#mal_cs_listinfo div:first-of-type:before{content:'Logged in as '}
+#mal_cs_listinfo div:last-of-type a{text-decoration: none}
+#mal_cs_listinfo div:last-of-type a:hover{text-decoration: underline}
+#mal_cs_listinfo div:last-of-type:before{font-weight:normal;content:'('}
+#mal_cs_listinfo div:last-of-type:after{font-weight:normal;content:')'}
+
+#mal_cs_links{width: 90px !important}
+#mal_cs_links a{ width:16px;height:16px;content:none; display: inline-block !important;color: transparent !important; letter-spacing: -1ex;font-size:xx-small}
+#mal_cs_links div:first-of-type:after{content: '\a0'}
+#mal_cs_links div:first-of-type a:first-of-type{background-position: 0px 0px}
+#mal_cs_links div:first-of-type a:last-of-type{background-position: -16px 0px}
+#mal_cs_links div:last-of-type a:first-of-type{background-position:-32px 0px}
+#mal_cs_links div:last-of-type a:last-of-type{background-position:-48px 0px}
+
+#mal_cs_otherlinks div:last-of-type{float:right;padding-right:150px}
+#mal_cs_otherlinks div:first-of-type{float:left}
+
+#mal_cs_powered img{display:none}
+#searchBox{margin-top: -2px !important; width: 135px !important}
+
+
+
+
